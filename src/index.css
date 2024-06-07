@@ -1,0 +1,111 @@
+.wrapper{
+    margin:50px;
+}
+
+.item-wrapper{
+    display: flex;
+    flex-wrap: nowrap;
+    width:100%;
+    column-gap: 3em;
+}
+
+.product-item{
+    width:70%;
+}
+
+.total-card{
+    width:30%;
+    height:auto;
+    background-color: #f5f2f2;
+    padding:30px;
+}
+
+.product-image{
+    width:100%;
+    height:100%;
+}
+
+.promo > button{
+    margin:0 50px;
+    background-color: #d66c21;
+    width:50%;
+}
+
+.card-display{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    row-gap: 2em;
+}
+.dropdown{
+    flex-wrap:nowrap !important;
+}
+.remove > button {
+    text-decoration: none;
+}
+.checkout{
+    background-color: #603b83;
+}
+@media only screen and (min-width: 768px){
+    .total-card{
+        display: block;
+    }
+    .total-landscape{
+        display:none;
+    }
+    .item-input{
+        width:55% !important;
+    }
+}
+
+@media only screen and (max-width: 768px){
+    .total-card{
+        display: none;
+    }
+    .total-landscape{
+        display:block;
+    }
+    .product-item{
+        width:100%;
+    }
+    .description > p{
+        display:none;
+    }
+    .product-image{
+        width:50px;
+        height:50px;
+    }
+    .wrapper{
+        margin:20px;
+    }
+    .axis-card{
+        width: 100% !important;
+    }
+    .item-input{
+        width:50% !important;
+    }
+}
+
+@media only screen and (min-width:300px) and (max-width: 550px){
+    .product-title{
+        font-size: 1em;
+    }
+    .product{
+        column-gap: 2em;
+    }
+    .item-input{
+        width:90% !important;
+    }
+
+}
+
+@media only screen and (min-width:768px) and (max-width: 1300px){
+   
+    .product-image{
+        width:80px;
+        height:80px;
+    }
+    .product{
+        column-gap: 3em;
+    }
+}

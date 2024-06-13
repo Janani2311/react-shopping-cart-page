@@ -1,6 +1,8 @@
-import React from 'react'
+import React, {useContext} from 'react'
+import { UserContext } from '../App';
 
-function Total({total}) {
+function Total() {
+    let {total} =useContext(UserContext);
   return <>
     <div className="container">
             <div className="row mb-2 justify-content-between d-flex">

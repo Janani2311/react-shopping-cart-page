@@ -1,19 +1,14 @@
 import React,{useContext, useState, useEffect} from 'react'
 import ProductCards from './ProductCards';
-
 import { UserContext } from '../App';
-import Total from './Total';
-import Totalcard from './Totalcard';
+
 
 function CartItem() {
-    let {products} = useContext(UserContext);
+   
+    let {data,setData,setTotal,items,setItem} = useContext(UserContext);
 
-    let [data,setData] = useState(products)
-    let [total,setTotal] = useState(0);
     let [quantity,setQuantity] = useState(0);
     let [removeItem,setRemoveItem] = useState(0);
-    let [items,setItem] = useState(data.length);
-   
 
     //function to remove item using it's ID and update the json
     if(removeItem > 0) {
@@ -44,24 +39,16 @@ function CartItem() {
     }
 
     return <>
-        <h1>Shopping Cart <span>&#40;{items}&#41;</span></h1>
-        <hr></hr>
-        {(items==0)?<h2>Your Cart is Empty</h2>:""}
-        <div className='item-wrapper'>
             <div className='row product-item'>
+                <h1>Shopping Cart <span>&#40;{items}&#41;</span></h1>
+                <hr></hr>
+                {(items==0)?<h2>Your Cart is Empty</h2>:""} 
                 {
                     data.map((e,i) =>{
-                        return <ProductCards dataItem={e} key={i} setRemoveItem={setRemoveItem} setQuantity={setQuantity}/>
+                        return <ProductCards dataItem={e} key={i} setQuantity={setQuantity} setRemoveItem={setRemoveItem}/>
                     })
                 }
-            <div className='total-landscape'>
-                <Total total={total}/>
             </div>
-            </div>
-            <div className='total-card'>
-                <Totalcard total={total} items={items}/>
-            </div>
-        </div>
         
     </>
 }

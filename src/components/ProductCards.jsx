@@ -1,13 +1,14 @@
-import React,{useState} from 'react'
+import React,{useState, useContext} from 'react'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 
 
-function ProductCards({dataItem,setRemoveItem,setQuantity}) {
+
+function ProductCards({dataItem,setQuantity,setRemoveItem}) {
     let items= [1,2,3,4,5];
 
   // function to set the subtotal of every item when user changes the quantity of the product
-    function handleChange(value,id){
+    function handleChange(value){
         let itemSubtotal = dataItem.price*value;
         dataItem.subtotal = itemSubtotal;
         setQuantity(value);
@@ -20,6 +21,7 @@ function ProductCards({dataItem,setRemoveItem,setQuantity}) {
     }
 
   return <>
+        
         <section>
             {/*<!--Html code to display cart products as list-->*/}
                 <div className="row align-items-center d-flex">

@@ -1,8 +1,9 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Button } from 'react-bootstrap';
-import Card from 'react-bootstrap/Card';
+import { UserContext } from '../App';
 
-function Totalcard({total,items}) {
+function Totalcard() {
+    let {total,items} =useContext(UserContext);
   return <>
         <div className='row card-display'>
                 <h3 className='mb-4'>Order Summary</h3>

@@ -7,7 +7,7 @@ function CartItem() {
    
     let {data,setData,setTotal,items,setItem} = useContext(UserContext);
 
-    let [quantity,setQuantity] = useState(0);
+    let [quantity,setQuantity] = useState(1);
     let [removeItem,setRemoveItem] = useState(0);
 
     //function to remove item using it's ID and update the json

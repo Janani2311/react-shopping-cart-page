@@ -14,10 +14,10 @@ function App() {
   let [items,setItem] = useState(data.length);
   
   return <>
-    <div class="wrapper">
+    <div className="wrapper">
       {/* <!--Using UseContext hook to access products data in cartItem component--> */}
       
-    <UserContext.Provider value = {{data,setData,total,setTotal,items,setItem,quantity,setQuantity,removeItem,setRemoveItem}}>
+    <UserContext.Provider value = {{data,setData,total,setTotal,items,setItem}}>
       <div className='item-wrapper'>
         <CartItem/>
         <div className='total-card'>
